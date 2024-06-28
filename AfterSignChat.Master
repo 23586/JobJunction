@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AfterSignChat.Master.cs" Inherits="JobJunction.AfterSignChat" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <title> Job Junction </title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+    <!-- HEADER -->
+
+    <header>
+        <div class="centralized-border">
+            <div class="logo">
+                <h1>JOB JUNCTION</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><asp:Button Text="Profile" CssClass="transparent-button" OnClick="SeeProfile" runat="server"/></li>
+                    <%--<li><a href="Chatbot.aspx">ChatBot</a></li>--%>
+                    <li><asp:Button ID="rate" Text="Rate the Companies" CssClass="transparent-button" OnClick="RateComp" runat="server" ClientIDMode="Static"/></li>
+                    <li><asp:Button ID="discover" Text="Discover Jobs" CssClass="transparent-button" OnClick="SeeJobs" runat="server" ClientIDMode="Static"/></li>
+                    <li><asp:Button ID="chat" Text="Chats" CssClass="transparent-button" OnClick="SeeChats" runat="server" ClientIDMode="Static"/></li>
+                    <li class="border-button"><a href="Home.aspx">Log Out</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <div id="page">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/6327a6a6-794c-44bb-8d8a-773444c63c65/webchat/config.js" defer></script>
+</body>
+</html>
